@@ -1,2 +1,0 @@
-model_checkpoint_path: "C:\\Work\\tfslim-tutorial\\code\\tf-slim-tutorial\\c01_defining_models\\s01_variables\\tmp\\tx-01.ckpt"
-all_model_checkpoint_paths: "C:\\Work\\tfslim-tutorial\\code\\tf-slim-tutorial\\c01_defining_models\\s01_variables\\tmp\\tx-01.ckpt"

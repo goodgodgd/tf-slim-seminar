@@ -46,8 +46,9 @@ Initialization
 init_op = tf.global_variables_initializer()
 
 with tf.Session() as sess:
+    # 여기서 초기화 되지만 어디까지나 backend 에서만 초기화
     sess.run(init_op)
-
+    # 값을 받아오려면 run을 해야 한다.
     val_b1 = sess.run(bias_1)
     val_w1, val_w2, val_w3, val_w4 = sess.run([weight_1, weight_2, weight_3, weight_4])
 
@@ -91,7 +92,7 @@ print('b2: ', bias_2)
 Saving / Restoring
 # tf.train.Saver 객체를 이용하여 변수를 체크포인트 파일로 저장/로드 가능
 """
-model_path = os.path.dirname(os.path.abspath(__file__)) + "\\tmp\\tx-01.ckpt"
+model_path = os.path.dirname(os.path.abspath(__file__)) + "../\\tmp\\tx-01.ckpt"
 bias_3 = tf.add(bias_1, bias_2, name='b3')
 print('b3:', bias_3)
 
