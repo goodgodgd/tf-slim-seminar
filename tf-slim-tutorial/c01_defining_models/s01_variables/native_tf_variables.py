@@ -92,7 +92,8 @@ print('b2: ', bias_2)
 Saving / Restoring
 # tf.train.Saver 객체를 이용하여 변수를 체크포인트 파일로 저장/로드 가능
 """
-model_path = os.path.dirname(os.path.abspath(__file__)) + "../\\tmp\\tx-01.ckpt"
+# 현재 경로에서 상대경로로 체크포인트 경로 지정 (이미 존재하는 폴더)
+model_path = os.path.dirname(os.path.abspath(__file__)) + "../../../../data/ckpt"
 bias_3 = tf.add(bias_1, bias_2, name='b3')
 print('b3:', bias_3)
 
