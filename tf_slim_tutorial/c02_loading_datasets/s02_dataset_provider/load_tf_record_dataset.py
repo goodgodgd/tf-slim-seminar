@@ -10,13 +10,13 @@ TFRecord Dataset 로드하기
 
 import tensorflow as tf
 import tensorflow.contrib.slim as slim
-from datasets import tf_record_dataset
-from utils.dataset_utils import load_batch
+from tf_slim_tutorial.datasets import tf_record_dataset
+from tf_slim_tutorial.utils.dataset_utils import load_batch
 
 """
 # slim.dataset.Dataset 클래스를 정의
 """
-TF_RECORD_DIR = '/home/itrocks/Git/Tensorflow/tf-slim-tutorial/raw_data/mnist/tfrecord'
+TF_RECORD_DIR = 'C:/Work/tfslim-tutorial/data/mnistasjpg/trainingSet/tfrecord'
 mnist_tfrecord_dataset = tf_record_dataset.TFRecordDataset(tfrecord_dir=TF_RECORD_DIR,
                                                            dataset_name='mnist',
                                                            num_classes=10)
@@ -25,6 +25,7 @@ dataset = mnist_tfrecord_dataset.get_split(split_name='train')
 
 """
 # slim.dataset_data_provider.DatasetDataProvider를 생성
+# 참조: https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/slim/python/slim/data/dataset_data_provider.py
 """
 provider = slim.dataset_data_provider.DatasetDataProvider(dataset)
 [image, label] = provider.get(['image', 'label'])

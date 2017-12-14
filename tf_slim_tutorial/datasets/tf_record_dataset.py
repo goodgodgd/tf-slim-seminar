@@ -15,7 +15,7 @@ Dataset 클래스
 import os
 import tensorflow as tf
 import tensorflow.contrib.slim as slim
-from datasets import dataset_utils
+from tf_slim_tutorial.datasets import dataset_utils
 
 _ITEMS_TO_DESCRIPTIONS = {
     'image': 'A color image of varying size.',

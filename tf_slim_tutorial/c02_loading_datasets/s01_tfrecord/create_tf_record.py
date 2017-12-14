@@ -37,7 +37,7 @@ raw_data/
 # 아래 코드를 약간 변형해서 사용
 # https://github.com/tensorflow/models/blob/master/slim/download_and_convert_data.py
 
-from datasets import convert_tf_record
+from tf_slim_tutorial.datasets import convert_tf_record
 
 FLAGS = tf.app.flags.FLAGS
 
@@ -48,7 +48,7 @@ tf.app.flags.DEFINE_string(
 
 tf.app.flags.DEFINE_string(
     'dataset_dir',
-    './raw_data/mnist',
+    'C:/Work/tfslim-tutorial/data/mnistasjpg/trainingSet',
     'A directory containing a set of subdirectories representing class names. Each subdirectory should contain PNG or JPG encoded images.')
 
 tf.app.flags.DEFINE_integer(

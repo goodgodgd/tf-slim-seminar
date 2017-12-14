@@ -24,9 +24,9 @@ The script should take about a minute to run.
 
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+# from __future__ import absolute_import
+# from __future__ import division
+# from __future__ import print_function
 
 import math
 import os
@@ -34,7 +34,7 @@ import random
 import sys
 
 import tensorflow as tf
-import datasets.dataset_utils as dataset_utils
+import tf_slim_tutorial.datasets.dataset_utils as dataset_utils
 
 # Seed for repeatability.
 _RANDOM_SEED = 0
@@ -182,10 +182,10 @@ def run(dataset_name, dataset_dir, num_shards, ratio_val):
     validation_filenames = photo_filenames[:num_validation]
 
     # First, convert the training and validation sets.
-    _convert_dataset('train', training_filenames, class_names_to_ids,
-                     dataset_dir, dataset_name, tf_record_dir, num_shards)
-    _convert_dataset('validation', validation_filenames, class_names_to_ids,
-                     dataset_dir, dataset_name, tf_record_dir, num_shards)
+    _convert_dataset(split_name='train', filenames=training_filenames, class_names_to_ids=class_names_to_ids,
+                     dataset_dir=dataset_dir, dataset_name=dataset_name, tf_record_dir=tf_record_dir, num_shards=num_shards)
+    _convert_dataset(split_name='validation', filenames=validation_filenames, class_names_to_ids=class_names_to_ids,
+                     dataset_dir=dataset_dir, dataset_name=dataset_name, tf_record_dir=tf_record_dir, num_shards=num_shards)
 
     # Finally, write the labels file:
     labels_to_class_names = dict(zip(range(len(class_names)), class_names))
