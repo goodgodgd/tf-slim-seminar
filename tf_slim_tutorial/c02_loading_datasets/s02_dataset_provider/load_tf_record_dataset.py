@@ -49,5 +49,7 @@ with tf.Session() as sess:
 
 '''
 tf.train.batch를 생성
+위에서는 한장씩 for loop으로 불러왔지만 (image, label)
+아래 load_batch 함수는 여러장을 묶어서 보내주는 변수를 (images, labels) 리턴한다
 '''
 images, labels, _ = load_batch(dataset)
